@@ -1,0 +1,72 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Prospects</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Full name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Location</th>
+      <th>Stage</th>
+      <th>Managed by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @prospects.each do |prospect| %>
+      <tr>
+       <td><%#= link_to prospect.full_name, :id => "full_name" %>
+        <a href="#" id="full_name"> <%= prospect.full_name %> </a> 
+       </td> 
+        <!-- <td><%= prospect.email %></td> -->
+        <td><%= prospect.phone %></td>
+        <td><%= prospect.location %></td>
+        <td><%= prospect.stage_id %></td>
+        <td><%= prospect.managed_by %></td>
+        <td><%= link_to 'Show', prospect %></td>
+        <td><%= link_to 'Edit', edit_prospect_path(prospect) %></td>
+        <td><%= link_to 'Destroy', prospect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Prospect', new_prospect_path %>
+
+
+<!-- <a href="#" id="username" data-type="text" data-pk="1" data-url="/post" data-title="Enter username">superuser</a> -->
+
+
+<script>
+$(document).ready(function() {
+    //toggle `popup` / `inline` mode
+    $.fn.editable.defaults.mode = 'popup';    
+    $.fn.editable.defaults.ajaxOptions = {type: "PUT"}; 
+    
+    //make status editable
+
+  $('#full_name').editable({
+    type: 'text',
+    pk: 1,
+    url: '/prospects/:id',
+    title: 'Enter username',
+    placement: 'right',
+});
+
+  
+
+
+
+
+
+
+
+
+
+});
+</script>
