@@ -19,14 +19,53 @@
 <h4>Stages</h4>
 <p>There are 4 stages. New Opportunity, Negotiating and won or lost</p>
 <ol>
-<li><strong>New Opportunity</strong> - This stage is assigned as default when a prospect is created.<li>
-<li><strong>Negotiating </strong> - This stage is assigned after the prospect responds to a proposal, but requests some changes before committing to a purchase.
-<li>
-<li><strong>Won</strong> - This stage is assigned after the prospect makes a purchase. This is when a customer record is created and a prospect record is archived.<li>
-<li><strong>Lost </strong> - This stage is assigned if a Prospect purchases from a competitor or decides they are no longer interested in your product.
-<li>
-
+<li><strong>New Opportunity</strong> - This stage is assigned as default when a prospect is created.</li>
+<li><strong>Negotiating </strong> - This stage is assigned after the prospect responds to a proposal, but requests some changes before committing to a purchase.</li>
+<li><strong>Won</strong> - This stage is assigned after the prospect makes a purchase. This is when a customer record is created and a prospect record is archived.</li>
+<li><strong>Lost </strong> - This stage is assigned if a Prospect purchases from a competitor or decides they are no longer interested in your product.</li>
 </ol>
 
-<p>A Stage has a name, description and interest_level.
-</p>
+<p>A Stage has a name, description and interest_level.</p>
+
+<h3>Business Logic</h3>
+<h4>Users & Roles</h4>
+<p>User should be created with valid email, phone and all fields must be mandatory. Validations should be present on both server-side as well as client-side.</p>
+<p>Sales Manager can manage i.e. CRUD, Prospects, Customers, Users, Stages & Email Templates. Exception being the create of customer as that is an automated process.</p>
+<p>Sales Associate can CRU Prospects. Each Sales Associate can only manage their own Prospects.</p>
+<p>User should be created and listed on the user index page itself.</p>
+<p>All Users should be listed in a table ordered by updated at. User data should be editable asynchronously. Checkout <a href="https://vitalets.github.io/x-editable/">JQuery X-editable</a></p>
+<p>User roles should be toggled asynchronously.</p>
+
+<h4>Prospects & Customers</h4>
+<p>Only when a Prospect has attained the stage of ‘Won’, can it be moved as a Customer. All Prospects initialize with the ‘New Opportunity’ Stage and is guided down the sales process by the sales rep.</p>
+<p>Prospect should be created and listed on the prospect index page. Make sure that any edit should be x-editable within the table same as users.</p>
+<p>All async edits should have success and errors messages displayed.</p>
+
+<table style="width:100%">
+  <tr>
+    <th><strong>STAGES</strong></th>
+  </tr>
+  <tr>
+    <td>NEW OPPORTUNITY</td>
+  </tr>
+  <tr>
+    <td>NEGOTIATING</td>
+  </tr>
+  <tr>
+    <td>WON</td>
+  </tr>
+    <tr>
+    <td>LOST</td>
+  </tr>
+</table>
+
+<h4>User Interfaces</h4>
+<p>The app should have all user interfaces designed in <a href="http://bulma.io/">Bootstrap 4</a></p>
+<p>UI should be clean, neat and fully functional.</p>
+
+<h4>Code Quality</h4>
+<p>Quality of code is of very high importance. Make sure code is well indented and optimised.</p>
+<p>Push the code onto your github profile and share the link. Code should be pushed right from very beginning. Commit frequently.</p>
+<p>Test all use cases and make sure the software you ship is fully functional.</p>
+<p>Feel free to discuss before proceeding if you have any questions.</p>
+<p>Good Luck!</p>
